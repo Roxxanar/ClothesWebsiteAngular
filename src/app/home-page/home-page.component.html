@@ -1,0 +1,70 @@
+<!--<a routerLink="/">Home</a>-->
+
+<div class="access">
+  <button type="button" class="buttonaccess">
+    <a routerLink="/new-page"><p>Access without account</p></a>
+  </button>
+</div>
+
+<div class="container_1">
+  <div class="sub_container1_1">
+    <img src="/assets/Mango_(retailer)-Logo.wine.svg"  id="logo" alt="logoimg" />
+
+
+
+    <div class="container_artgallery">
+      <div class="carousel-view">
+        <button id="prev-btn" class="prev-btn">
+          <svg viewBox="0 0 512 512" width="20" title="chevron-circle-left">
+            <path
+              d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"
+            />
+          </svg>
+        </button>
+        <div id="item-list" class="item-list">
+          <img id="item" class="item" src="poza2.PNG" />
+          <img id="item" class="item" src="poza.PNG" />
+          <img id="item" class="item" src="poza3.PNG" />
+        </div>
+        <button id="next-btn" class="next-btn">
+          <svg
+            viewBox="0 0 512 512"
+            width="20"
+            title="chevron-circle-right"
+          >
+            <path
+              d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="scriptartgallery.js"></script>
+
+  </div>
+  <div class="sub_container1_2">
+    <div class="login">
+    <form id="form_new_page" action="test.php" method="POST">
+    <div class="login_inputs">
+          <label > Email address:</label>
+          <input required type="text" name="name" />
+
+          <br /><br /><br />
+          <label > Password: </label>
+          <input required type="password" name="password" />
+        </div>
+
+        <div class="login_buttons">
+          <button type="submit" class="button1">
+            <a style="color: rgb(255, 255, 255)"
+              >Log in</a
+            >
+          </button>
+
+          <button type="submit" class="button2">Sign up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

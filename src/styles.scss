@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+// Colors
+:root {
+--primary-color: rgb(124, 91, 194);
+--background-footer: #f0f0f0;
+--background-footer-footer:rgb(152, 139, 180);
+--alert-background: white;
+--newsletter-button: white;
+--backdrop-color: rgb(153, 142, 179);
+--link-visited: black;
+--newsletter-border: black;
+--newsletter-input-border: #999191;
+--access-without-account: white;
+// Fonts
+--font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Sizes
+--base-font-size: 16px;
+--header-height: 60px;
+}
+
+body
+{ height:500px;
+
+background-color: transparent;
+}

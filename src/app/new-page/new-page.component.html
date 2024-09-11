@@ -1,0 +1,158 @@
+
+
+
+
+<div class="container_1">
+  <div class="sub_container1_1">
+    <a href="index.php"><img src="Mango_(retailer)-Logo.wine.svg" id="logoimg" alt="logoimg" /></a>
+  </div>
+  <div class="sub_container1_2">
+    <img src="searchicon.svg" id="searchicon" alt="searchicon" />
+
+    <input id="search" type="text" placeholder="SEARCH" />
+    <button onclick="openDialog()" id="openDialog">
+      <img src="usericon.svg" id="usericon" alt="usericon" />
+    </button>
+
+
+    <div id="popUp">
+      <div class="login">
+        <form id="form_new_page" action="test.php" method="POST">
+          <div class="login_inputs">
+            <label > Email address:</label>
+            <input required type="text" name="name" />
+
+            <br /><br /><br />
+            <label > Password: </label>
+            <input required type="password" name="password" />
+          </div>
+
+          <div class="login_buttons">
+            <button type="submit" class="button1">
+              Log in
+            </button>
+
+            <button type="submit" class="button2">
+              Sign up
+            </button>
+          </div>
+        </form>
+      </div>
+      <button onclick="closeDialog()" id="closeDialog">Close</button>
+    </div>
+
+    <div id="popUp2">
+
+       <div class="welcome">
+
+
+
+      </div>
+
+      <button onclick="closeDialogLogOut()" id="closeDialog">Close</button>
+      <button onclick="DialogLogOut()" id="closeDialog">Log Out</button>
+
+    </div>
+
+
+
+    <img src="shopping-bagicon.png" id="shopping-bagicon" alt="shopping-bagicon" />
+  </div>
+</div>
+<div class="container">
+  <div class="container_products">
+    <div class="container_menu">
+      <p id="new">New</p>
+
+      <p><a href="sales.php">Sales</a></p>
+      <p><a href="clothing.php">Clothing</a></p>
+      <p><a href="shoes.php">Shoes</a></p>
+      <p><a href="bags.php">Bags</a></p>
+      <p><a href="accessories.php">Accessories</a></p>
+    </div>
+
+    <div class="images">
+      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+
+    </div>
+
+    <div class="images">
+      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+    </div>
+    <div class="images">
+      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+    </div>
+  </div>
+  <div class="price_row">
+  <div id="price">
+     <?php include 'displayPrice.php';?>
+     </div>
+     <div id="price">
+     <?php include 'displayPrice.php';?>
+     </div>
+     <div id="price">
+     <?php include 'displayPrice.php';?>
+     </div>
+    </div>
+  <div class="container_products2">
+    <div class="container_menu"></div>
+    <div class="images">
+      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+    </div>
+    <div class="images">
+      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+    </div>
+    <div class="images">
+      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+    </div>
+  </div>
+  <div class="price_row">
+  <div id="price">
+     <?php include 'displayPrice.php';?>
+     </div>
+     <div id="price">
+     <?php include 'displayPrice.php';?>
+     </div>
+     <div id="price">
+     <?php include 'displayPrice.php';?>
+     </div>
+    </div>
+  <div class="container_products2">
+    <div class="container_menu"></div>
+    <div class="images">
+      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+    </div>
+    <div class="images">
+      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+    </div>
+    <div class="images">
+      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+    </div>
+  </div>
+  <div class="price_row">
+  <div id="price">
+     <?php include 'displayPrice.php';?>
+     </div>
+     <div id="price">
+     <?php include 'displayPrice.php';?>
+     </div>
+     <div id="price">
+     <?php include 'displayPrice.php';?>
+     </div>
+    </div>
+
+
+
+</div>
+
+
+
+<script src="Dialog.js"></script>
+<script src="displayAlert.js"></script>
+
+
+<router-outlet></router-outlet>
+
+
+
+

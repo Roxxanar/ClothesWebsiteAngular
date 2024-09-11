@@ -1,0 +1,122 @@
+.access {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  color: var(--acces-without-account);
+}
+
+.container_1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /*background-color: white;*/
+  background-color: transparent;
+}
+
+.buttonaccess {
+  height: 35px;
+  width: 280px;
+  background-color: rgb(124, 91, 194);
+  color:white;
+  border-radius: 5px;
+  border: 5px solid rgb(124, 91, 194);
+}
+
+.buttonaccess p {
+
+margin: 0px 0px;
+  color: var(--access-without-account);
+}
+
+.buttonaccess:hover {
+  transform: scale(1.04);
+}
+
+.sub_container1_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 800px;
+  background-color: transparent;
+}
+
+#logo {
+  height: 200px;
+}
+
+#random {
+  height: 300px;
+}
+
+.sub_container1_2 {
+  padding-top: 50px;
+  height: 500px;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.login {
+  height: 400px;
+  width: 400px;
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #d7d7d7;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 10px 20px, rgba(0, 0, 0, 0.14) 0px 2px 6px,
+    rgba(0, 0, 0, 0.04) 0px 0px 1px;
+  border-radius: 10px;
+}
+
+.login_inputs {
+  margin-top: 50px;
+  margin-left: 65px;
+}
+
+.login_inputs label {
+  font-size: 20px;
+}
+
+.login_inputs input {
+  width: 250px;
+  height: 20px;
+  border-color: #c4bebe;
+  border-style: solid;
+  border-radius: 3px;
+}
+
+.login_buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+  margin-left: -15px;
+}
+
+.login_buttons button {
+  height: 30px;
+  width: 100px;
+  background-color: rgb(124, 91, 194);
+  color: white;
+  border-radius: 5px;
+  border: 5px solid rgb(124, 91, 194);
+}
+
+.button1 {
+  margin-right: 30px;
+}
+
+.button1 a:link,
+.buttonaccess a:link {
+  text-decoration: none;
+}
+
+.button1:hover,
+.button2:hover,
+.subscribe:hover {
+  transform: scale(1.04);
+}
