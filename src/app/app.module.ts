@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -12,6 +13,10 @@ import { SalesPageComponent } from './sales-page/sales-page.component';
 import { FaqPageComponent } from './faq-page/faq-page.component';
 import { DetailsComponent } from './details/details.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ClothingPageComponent } from './clothing-page/clothing-page.component';
+
+import { ClothingService } from './clothing-page/clothing.service';
+
 
 @NgModule({
   declarations: [
@@ -22,13 +27,15 @@ import { HomePageComponent } from './home-page/home-page.component';
     SalesPageComponent,
     FaqPageComponent,
     DetailsComponent,
-    HomePageComponent
+    HomePageComponent,
+    ClothingPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ClothingService],
   bootstrap: [AppComponent]
 })
 

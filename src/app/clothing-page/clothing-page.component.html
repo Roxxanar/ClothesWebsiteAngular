@@ -1,7 +1,4 @@
 
-
-
-
 <div class="container_1">
   <div class="sub_container1_1">
     <a routerLink="/home-page"> <img src="/assets/Mango_(retailer)-Logo.wine.svg" id="logoimg" alt="logoimg" /> </a>
@@ -62,17 +59,18 @@
 <div class="container">
   <div class="container_products">
     <div class="container_menu">
-      <p id="new">New</p>
+      <a routerLink="/new-page"><p>New</p></a>
 
       <p><a href="sales.php">Sales</a></p>
-      <a routerLink="/clothing-page"><p>Clothing</p></a>
+      <p id="new">Clothing</p>
       <p><a href="shoes.php">Shoes</a></p>
       <p><a href="bags.php">Bags</a></p>
       <p><a href="accessories.php">Accessories</a></p>
     </div>
 
     <div class="images">
-      <img style="height: 300px" src="/assets/tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+
+        <li *ngFor="let clothing of clothingItems">{{ clothing.Photo }} {{ clothing.Price }}</li>
 
     </div>
 
