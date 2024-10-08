@@ -55,10 +55,18 @@
 
     <img src="/assets/shopping-bagicon.png" id="shopping-bagicon" alt="shopping-bagicon" />
   </div>
+
+
+
+
 </div>
+
+
+
+
 <div class="container">
-  <div class="container_products">
-    <div class="container_menu">
+
+<div class="container_menu">
       <a routerLink="/new-page"><p>New</p></a>
 
       <p><a href="sales.php">Sales</a></p>
@@ -68,85 +76,35 @@
       <p><a href="accessories.php">Accessories</a></p>
     </div>
 
-    <div class="images">
+    <div class="container-photos">
 
-        <li *ngFor="let clothing of clothingItems">{{ clothing.Photo }} {{ clothing.Price }}</li>
+    <div *ngFor="let clothing of clothingItems" class="images">
 
-    </div>
+      <img [src]="'/assets/' + clothing.Photo" [alt]="clothing.Name" style="height: 300px;">
 
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-  </div>
-  <div class="price_row">
-  <div id="price">
-     <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-    </div>
-  <div class="container_products2">
-    <div class="container_menu"></div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-  </div>
-  <div class="price_row">
-  <div id="price">
-    <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-    </div>
-  <div class="container_products2">
-    <div class="container_menu"></div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-  </div>
-  <div class="price_row">
-  <div id="price">
-    <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-    </div>
+      <div id="price">
 
+        <p>Price ${{ clothing.Price }}</p>
 
-
+      </div><p>
 </div>
 
 
+    </div>
 
-<script src="Dialog.js"></script>
-<script src="displayAlert.js"></script>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
 
 
 <router-outlet></router-outlet>

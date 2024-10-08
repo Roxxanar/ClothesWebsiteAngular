@@ -10,12 +10,13 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 
 const routes: Routes = [
-
+  { path: '', component: HomePageComponent }, // Default route
   { path: 'homepage', component: HomePageComponent },
   { path: 'newpage', component: NewPageComponent },
   { path: 'faqpage', component: FaqPageComponent },
   { path: 'clothingpage', component: ClothingPageComponent},
-  { path: '**', redirectTo: 'homepage', pathMatch: 'full' } // Wildcard route
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+
 ];
 
 @NgModule({
