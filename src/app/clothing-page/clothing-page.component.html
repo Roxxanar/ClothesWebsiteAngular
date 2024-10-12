@@ -1,7 +1,12 @@
-
 <div class="container_1">
   <div class="sub_container1_1">
-    <a routerLink="/home-page"> <img src="/assets/Mango_(retailer)-Logo.wine.svg" id="logoimg" alt="logoimg" /> </a>
+    <a routerLink="/home-page">
+      <img
+        src="/assets/Mango_(retailer)-Logo.wine.svg"
+        id="logoimg"
+        alt="logoimg"
+      />
+    </a>
   </div>
   <div class="sub_container1_2">
     <img src="/assets/searchicon.svg" id="searchicon" alt="searchicon" />
@@ -11,27 +16,22 @@
       <img src="/assets/usericon.svg" id="usericon" alt="usericon" />
     </button>
 
-
     <div id="popUp">
       <div class="login">
         <form id="form_new_page" action="test.php" method="POST">
           <div class="login_inputs">
-            <label > Email address:</label>
+            <label> Email address:</label>
             <input required type="text" name="name" />
 
             <br /><br /><br />
-            <label > Password: </label>
+            <label> Password: </label>
             <input required type="password" name="password" />
           </div>
 
           <div class="login_buttons">
-            <button type="submit" class="button1">
-              Log in
-            </button>
+            <button type="submit" class="button1">Log in</button>
 
-            <button type="submit" class="button2">
-              Sign up
-            </button>
+            <button type="submit" class="button2">Sign up</button>
           </div>
         </form>
       </div>
@@ -39,76 +39,62 @@
     </div>
 
     <div id="popUp2">
-
-       <div class="welcome">
-
-
-
-      </div>
+      <div class="welcome"></div>
 
       <button onclick="closeDialogLogOut()" id="closeDialog">Close</button>
       <button onclick="DialogLogOut()" id="closeDialog">Log Out</button>
-
     </div>
 
-
-
-    <img src="/assets/shopping-bagicon.png" id="shopping-bagicon" alt="shopping-bagicon" />
+    <img
+      src="/assets/shopping-bagicon.png"
+      id="shopping-bagicon"
+      alt="shopping-bagicon"
+    />
   </div>
-
-
-
-
 </div>
-
-
-
 
 <div class="container">
+  <div class="container_menu">
+    <a routerLink="/new-page"><p>New</p></a>
 
-<div class="container_menu">
-      <a routerLink="/new-page"><p>New</p></a>
+    <p><a href="sales.php">Sales</a></p>
+    <p id="new">Clothing</p>
+    <p><a href="shoes.php">Shoes</a></p>
+    <p><a href="bags.php">Bags</a></p>
+    <p><a href="accessories.php">Accessories</a></p>
+  </div>
 
-      <p><a href="sales.php">Sales</a></p>
-      <p id="new">Clothing</p>
-      <p><a href="shoes.php">Shoes</a></p>
-      <p><a href="bags.php">Bags</a></p>
-      <p><a href="accessories.php">Accessories</a></p>
+  <div class="container-ngfor">
+    <!-- Loop through each group of displayed items -->
+    <div *ngFor="let clothingItems of displayedGroups" class="container-photos-ngfor">
+      <div class="container-photos">
+        <!-- Loop through items in each group (9 items per group) -->
+        <div *ngFor="let clothing of clothingItems" class="images">
+          <img
+            [src]="'/assets/' + clothing.Photo"
+            [alt]="clothing.Name"
+            style="height: 300px"
+          />
+
+          <div id="price">
+            <p>Price ${{ clothing.Price }}</p>
+          </div>
+          <p></p>
+        </div>
+      </div>
     </div>
-
-    <div class="container-photos">
-
-    <div *ngFor="let clothing of clothingItems" class="images">
-
-      <img [src]="'/assets/' + clothing.Photo" [alt]="clothing.Name" style="height: 300px;">
-
-      <div id="price">
-
-        <p>Price ${{ clothing.Price }}</p>
-
-      </div><p>
+  </div>
 </div>
 
-
-    </div>
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
+<!-- Load More Button -->
+<div class="load-more-container">
+  <button
+    (click)="loadMoreItems()"
+    *ngIf="currentIndex < clothingItems.length"
+    class="load-more"
+  >
+    Load More
+  </button>
+</div>
 
 <router-outlet></router-outlet>
-
-
-
-
