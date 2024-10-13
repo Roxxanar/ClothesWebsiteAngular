@@ -79,15 +79,29 @@ export class NewPageComponent implements OnInit {
   onSearchChange(event: Event) {
     const input = event.target as HTMLInputElement;
     this.searchTerm = input.value.trim(); // Update the search term
+console.log(this.filteredItems);
+
 
     // If the search term is empty, reset to show all items
     if (this.searchTerm === '') {
       this.filteredItems = this.newItems;
     } else {
       // Otherwise, filter the items
-      this.filteredItems = this.newItems.filter(item =>
-        item.Name.toLowerCase().includes(this.searchTerm.toLowerCase())
-      );
+      this.filteredItems = this.newItems.filter(item => {
+        const clothingName = item.ClothingName ? item.ClothingName.trim().toLowerCase() : '';
+        const shoesName = item.ShoesName ? item.ShoesName.trim().toLowerCase() : '';
+        const bagsName = item.BagsName ? item.BagsName.trim().toLowerCase() : '';
+        const accessoriesName = item.AccessoriesName ? item.AccessoriesName.trim().toLowerCase() : '';
+
+        const searchTerm = this.searchTerm.toLowerCase();
+
+        // Check if the search term matches any of the names
+        return clothingName.includes(searchTerm) ||
+               shoesName.includes(searchTerm) ||
+               bagsName.includes(searchTerm) ||
+               accessoriesName.includes(searchTerm);
+
+      });
     }
 
     // Reset displayed groups and re-load filtered items
