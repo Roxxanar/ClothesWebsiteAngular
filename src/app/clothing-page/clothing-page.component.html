@@ -11,7 +11,7 @@
   <div class="sub_container1_2">
     <img src="/assets/searchicon.svg" id="searchicon" alt="searchicon" />
 
-    <input id="search" type="text" placeholder="SEARCH" />
+    <input id="search" type="text" placeholder="SEARCH" (input)="onSearchChange($event)"  />
     <button onclick="openDialog()" id="openDialog">
       <img src="/assets/usericon.svg" id="usericon" alt="usericon" />
     </button>
@@ -86,15 +86,15 @@
   </div>
 </div>
 
-<!-- Load More Button -->
+
 <div class="load-more-container">
   <button
-    (click)="loadMoreItems()"
-    *ngIf="currentIndex < clothingItems.length"
-    class="load-more"
-  >
-    Load More
-  </button>
+  (click)="loadMoreItems()"
+  *ngIf="currentIndex < filteredItems.length"
+  class="load-more"
+>
+  Load More
+</button>
 </div>
 
 <router-outlet></router-outlet>

@@ -16,6 +16,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ClothingPageComponent } from './clothing-page/clothing-page.component';
 
 import { ClothingService } from './clothing-page/clothing.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ClothingService } from './clothing-page/clothing.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ClothingService],
   bootstrap: [AppComponent]
