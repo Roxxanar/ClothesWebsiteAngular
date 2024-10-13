@@ -9,6 +9,8 @@ import { DetailsComponent } from './details/details.component';
 
 
 const routeConfig: Routes = [
+
+
   {
     path: 'home-page',
     component: HomePageComponent,

@@ -1,40 +1,42 @@
-
-
-
-
 <div class="container_1">
   <div class="sub_container1_1">
-    <a routerLink="/home-page"> <img src="/assets/Mango_(retailer)-Logo.wine.svg" id="logoimg" alt="logoimg" /> </a>
+    <a routerLink="/home-page">
+      <img
+        src="/assets/Mango_(retailer)-Logo.wine.svg"
+        id="logoimg"
+        alt="logoimg"
+      />
+    </a>
   </div>
   <div class="sub_container1_2">
     <img src="/assets/searchicon.svg" id="searchicon" alt="searchicon" />
 
-    <input id="search" type="text" placeholder="SEARCH" />
+    <input
+      id="search"
+      type="text"
+      placeholder="SEARCH"
+      (input)="onSearchChange($event)"
+    />
     <button onclick="openDialog()" id="openDialog">
       <img src="/assets/usericon.svg" id="usericon" alt="usericon" />
     </button>
-
 
     <div id="popUp">
       <div class="login">
         <form id="form_new_page" action="test.php" method="POST">
           <div class="login_inputs">
-            <label > Email address:</label>
+            <label> Email address:</label>
             <input required type="text" name="name" />
 
             <br /><br /><br />
-            <label > Password: </label>
+            <label> Password: </label>
             <input required type="password" name="password" />
           </div>
 
           <div class="login_buttons">
-            <button type="submit" class="button1">
-              Log in
-            </button>
+            <button type="submit" class="button1">Log in</button>
 
-            <button type="submit" class="button2">
-              Sign up
-            </button>
+            <button type="submit" class="button2">Sign up</button>
           </div>
         </form>
       </div>
@@ -42,117 +44,103 @@
     </div>
 
     <div id="popUp2">
-
-       <div class="welcome">
-
-
-
-      </div>
+      <div class="welcome"></div>
 
       <button onclick="closeDialogLogOut()" id="closeDialog">Close</button>
       <button onclick="DialogLogOut()" id="closeDialog">Log Out</button>
-
     </div>
 
-
-
-    <img src="/assets/shopping-bagicon.png" id="shopping-bagicon" alt="shopping-bagicon" />
+    <img
+      src="/assets/shopping-bagicon.png"
+      id="shopping-bagicon"
+      alt="shopping-bagicon"
+    />
   </div>
 </div>
+
 <div class="container">
-  <div class="container_products">
-    <div class="container_menu">
-      <p id="new">New</p>
+  <div class="container_menu">
+    <p id="new">New</p>
 
-      <p><a href="sales.php">Sales</a></p>
-      <a routerLink="/clothing-page"><p>Clothing</p></a>
-      <p><a href="shoes.php">Shoes</a></p>
-      <p><a href="bags.php">Bags</a></p>
-      <p><a href="accessories.php">Accessories</a></p>
-    </div>
+    <p><a href="sales.php">Sales</a></p>
+    <a routerLink="/clothing-page"><p>Clothing</p></a>
+    <p><a href="shoes.php">Shoes</a></p>
+    <p><a href="bags.php">Bags</a></p>
+    <p><a href="accessories.php">Accessories</a></p>
+  </div>
 
-    <div class="images">
-      <img style="height: 300px" src="/assets/tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+  <div class="container-ngfor">
+    <!-- Loop through each group of displayed items -->
+    <div
+      *ngFor="let newItems of displayedGroups"
+      class="container-photos-ngfor"
+    >
+      <div class="container-photos">
+        <!-- Loop through items in each group (9 items per group) -->
+        <div *ngFor="let new of newItems" class="images">
+          <div *ngIf="new.ClothingID">
+            <img
+              [src]="'/assets/' + new.ClothingPhoto"
+              [alt]="new.ClothingName"
+              style="height: 300px"
+            />
 
-    </div>
+            <div id="price">
+              <p>Price ${{ new.ClothingPrice }}</p>
+            </div>
+          </div>
 
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
+          <div *ngIf="new.ShoesID">
+            <img
+              [src]="'/assets/' + new.ShoesPhoto"
+              [alt]="new.ShoesName"
+              style="height: 300px"
+            />
+
+            <div id="price">
+              <p>Price ${{ new.ShoesPrice }}</p>
+            </div>
+          </div>
+
+          <div *ngIf="new.BagsID">
+            <img
+              [src]="'/assets/' + new.BagsPhoto"
+              [alt]="new.BagsName"
+              style="height: 300px"
+            />
+
+            <div id="price">
+              <p>Price ${{ new.BagsPrice }}</p>
+            </div>
+          </div>
+
+          <div *ngIf="new.AccessoriesID">
+            <img
+              [src]="'/assets/' + new.AccessoriesPhoto"
+              [alt]="new.AccessoriesName"
+              style="height: 300px"
+            />
+
+            <div id="price">
+              <p>Price ${{ new.AccessoriesPrice }}</p>
+            </div>
+          </div>
+
+          <p></p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="price_row">
-  <div id="price">
-     <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-    </div>
-  <div class="container_products2">
-    <div class="container_menu"></div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-  </div>
-  <div class="price_row">
-  <div id="price">
-    <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-    </div>
-  <div class="container_products2">
-    <div class="container_menu"></div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-    <div class="images">
-      <img style="height: 300px" src="tamara-bellis-Dv0YZ2_V3nc-unsplash.jpg" />
-    </div>
-  </div>
-  <div class="price_row">
-  <div id="price">
-    <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-     <div id="price">
-      <p>Price</p>
-     </div>
-    </div>
-
-
-
 </div>
 
-
-
-<script src="Dialog.js"></script>
-<script src="displayAlert.js"></script>
-
+<div class="load-more-container">
+  <button
+    (click)="loadMoreItems()"
+    *ngIf="currentIndex < filteredItems.length"
+    class="load-more"
+  >
+    Load More
+  </button>
+</div>
 
 <router-outlet></router-outlet>
-
-
-
-

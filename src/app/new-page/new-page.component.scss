@@ -1,6 +1,3 @@
-
-
-
 #logoimg {
   height: 50px;
   width: 250px;
@@ -164,6 +161,11 @@ input {
   background-color: white;
 }
 
+.sub_container1_2 {
+  height: 25px;
+  display: flex;
+}
+
 #search:focus {
   outline: none;
   border-bottom: 2px solid;
@@ -171,13 +173,28 @@ input {
 
 .container {
   display: flex;
-  align-items: center;
+
+  gap: 120px; /* Space between items */
+  width: 70vw;
+}
+
+.container-ngfor {
+  width: 70vw;
+  display: flex;
   flex-direction: column;
-  width: 1300px;
+  gap: 100px;
+}
+
+.container-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 40px; /* Space between items */
+  row-gap: 70px;
+  width: 70vw;
 }
 
 .container_menu {
-  width: 150px;
+  width: 90px;
   height: 302.4px;
   padding-left: 100px;
 
@@ -263,11 +280,12 @@ a:visited {
 }
 
 #price {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  width: 340px;
+  width: 400px;
 }
 
 #price p {
@@ -275,6 +293,101 @@ a:visited {
   border: 1.5px solid #000;
   border-radius: 9px;
 }
+
+.load-more-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.load-more {
+  height: 30px;
+  width: 100px;
+  background-color: var(--primary-color);
+  color: var(--newsletter-button);
+  border-radius: 5px;
+  border: 5px solid var(--primary-color);
+}
+
+.load-more:hover {
+  transform: scale(1.03);
+}
+
+
+
+
+@media (max-width: 1100px) {
+
+  .container {
+
+    gap:80px;
+    width: 100vw;
+
+  }
+
+  .container_1 {
+
+    width: 90vw;
+    justify-content: space-between;
+    padding-left: 20px;
+
+  }
+
+  .sub_container1_1 {
+
+    width: 10vw;
+  }
+
+  .container_menu {
+
+    padding-left: 60px;
+  }
+
+  .container-photos {
+
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 items per row */
+  gap: 40px; /* Space between items */
+  row-gap: 70px;
+  width: 70vw;
+  }
+}
+
+
+
+@media (max-width: 700px) {
+
+#logoimg {
+
+  width:200px;
+}
+
+.container {
+
+  gap: 130px;
+}
+
+.container-photos {
+
+  display: grid;
+grid-template-columns: repeat(1, 1fr); /* 3 items per row */
+gap: 40px; /* Space between items */
+row-gap: 70px;
+width: 70vw;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 1900px) {
   .container_products {
