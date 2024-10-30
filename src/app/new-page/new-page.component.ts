@@ -3,6 +3,9 @@ import { OnInit } from '@angular/core';
 import { NewService } from './new.service';
 import { HostListener } from '@angular/core';
 
+import { MatDialog } from '@angular/material/dialog';
+import { DialogFormComponent } from '../dialog-form/dialog-form.component';
+
 @Component({
   selector: 'app-new-page',
   templateUrl: './new-page.component.html',
@@ -18,8 +21,8 @@ export class NewPageComponent implements OnInit {
 
   searchTerm: string = ''; // Holds the user's search input
 
-  constructor(private newService: NewService) {
-    console.log('ClothingPageComponent initialized');
+  constructor(private newService: NewService, public dialog: MatDialog) {
+    console.log('NewPageComponent initialized');
   }
 
   ngOnInit() {
@@ -107,4 +110,16 @@ console.log(this.filteredItems);
     // Reset displayed groups and re-load filtered items
     this.resetDisplayedGroups();
   }
+
+
+  openDialog(): void {
+    this.dialog.open(DialogFormComponent, {
+      width: '403.2px',
+
+    });
+  }
+
 }
+
+
+

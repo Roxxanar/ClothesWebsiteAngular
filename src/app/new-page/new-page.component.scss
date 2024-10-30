@@ -12,106 +12,7 @@
   height: 20px;
 }
 
-#popUp {
-  position: absolute;
-  height: 400px;
-  width: 400px;
-  background-color: white;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #d7d7d7;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 10px 20px, rgba(0, 0, 0, 0.14) 0px 2px 6px,
-    rgba(0, 0, 0, 0.04) 0px 0px 1px;
-  border-radius: 10px;
-  margin-top: 12px;
-  margin-left: -55px;
-  display: none;
-  z-index: 101;
-}
 
-#popUp2 {
-  position: absolute;
-  height: 400px;
-  width: 400px;
-  background-color: white;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #d7d7d7;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 10px 20px, rgba(0, 0, 0, 0.14) 0px 2px 6px,
-    rgba(0, 0, 0, 0.04) 0px 0px 1px;
-  border-radius: 10px;
-  margin-top: 12px;
-  margin-left: -55px;
-  display: none;
-  z-index: 99;
-}
-
-.welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 160px;
-  margin-top: 30px;
-  padding-right: 20px;
-}
-
-.welcome p {
-  font-size: 30px;
-  margin: 0 0;
-}
-
-.favorites {
-  margin-top: 50px;
-  font-size: 15px;
-  height: 40px;
-  width: 100px;
-  background-color: rgb(230, 31, 91);
-  color: white;
-  border-radius: 5px;
-  border: 5px solid rgb(230, 31, 91);
-}
-
-.favorites:hover {
-  transform: scale(1.03);
-}
-
-.login_inputs {
-  margin-top: 45px;
-  margin-left: 65px;
-}
-
-.login_inputs label {
-  font-size: 20px;
-}
-
-.login_inputs input {
-  width: 250px;
-  height: 20px;
-  border-color: #c4bebe;
-  border-style: solid;
-  border-radius: 3px;
-}
-
-.login_buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 70px;
-  margin-left: -15px;
-}
-
-.login_buttons button {
-  height: 30px;
-  width: 100px;
-  background-color: rgb(124, 91, 194);
-  color: white;
-  border-radius: 5px;
-  border: 5px solid rgb(124, 91, 194);
-}
-
-.button1 {
-  margin-right: 30px;
-}
 
 .button1 a:link,
 .buttonaccess a:link {
@@ -122,7 +23,8 @@
 .button2:hover,
 .subscribe:hover,
 #closeDialog:hover,
-#openDialog:hover {
+#openDialog:hover,
+#openBag:hover {
   transform: scale(1.04);
 }
 
@@ -132,19 +34,14 @@
   padding: 0px 0px;
 }
 
-#closeDialog {
-  margin-top: 50px;
-  margin-left: 150px;
-  height: 30px;
-  width: 80px;
-  background-color: rgb(230, 31, 31);
-  color: white;
-  border-radius: 5px;
-  border: 5px solid rgb(230, 31, 31);
+#openBag {
+  border-style: none;
+  background-color: transparent;
+  padding: 0px 0px;
 }
 
 #shopping-bagicon {
-  height: 20px;
+  height: 21px;
 }
 
 input {
@@ -314,80 +211,52 @@ a:visited {
   transform: scale(1.03);
 }
 
-
-
-
 @media (max-width: 1100px) {
-
   .container {
-
-    gap:80px;
+    gap: 80px;
     width: 100vw;
-
   }
 
   .container_1 {
-
     width: 90vw;
     justify-content: space-between;
     padding-left: 20px;
-
   }
 
   .sub_container1_1 {
-
     width: 10vw;
   }
 
   .container_menu {
-
     padding-left: 60px;
   }
 
   .container-photos {
-
     display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 3 items per row */
-  gap: 40px; /* Space between items */
-  row-gap: 70px;
-  width: 70vw;
+    grid-template-columns: repeat(2, 1fr); /* 3 items per row */
+    gap: 40px; /* Space between items */
+    row-gap: 70px;
+    width: 70vw;
   }
 }
 
-
-
 @media (max-width: 700px) {
+  #logoimg {
+    width: 200px;
+  }
 
-#logoimg {
+  .container {
+    gap: 130px;
+  }
 
-  width:200px;
+  .container-photos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 3 items per row */
+    gap: 40px; /* Space between items */
+    row-gap: 70px;
+    width: 70vw;
+  }
 }
-
-.container {
-
-  gap: 130px;
-}
-
-.container-photos {
-
-  display: grid;
-grid-template-columns: repeat(1, 1fr); /* 3 items per row */
-gap: 40px; /* Space between items */
-row-gap: 70px;
-width: 70vw;
-}
-
-
-}
-
-
-
-
-
-
-
-
-
 
 @media only screen and (max-width: 1900px) {
   .container_products {

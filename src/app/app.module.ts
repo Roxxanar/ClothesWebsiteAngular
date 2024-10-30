@@ -17,6 +17,10 @@ import { ClothingPageComponent } from './clothing-page/clothing-page.component';
 
 import { ClothingService } from './clothing-page/clothing.service';
 import { FormsModule } from '@angular/forms';
+import { DialogFormComponent } from './dialog-form/dialog-form.component';
+import { DialogLoggedComponent } from './dialog-logged/dialog-logged.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -29,13 +33,17 @@ import { FormsModule } from '@angular/forms';
     FaqPageComponent,
     DetailsComponent,
     HomePageComponent,
-    ClothingPageComponent
+    ClothingPageComponent,
+    DialogFormComponent,
+    DialogLoggedComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [ClothingService],
   bootstrap: [AppComponent]

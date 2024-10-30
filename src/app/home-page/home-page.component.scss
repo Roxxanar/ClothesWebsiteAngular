@@ -17,15 +17,14 @@
 .buttonaccess {
   height: 35px;
   width: 280px;
-  background-color: rgb(124, 91, 194);
-  color:white;
+  background-color: var(--primary-color);
+  color: white;
   border-radius: 5px;
-  border: 5px solid rgb(124, 91, 194);
+  border: 5px solid var(--primary-color);
 }
 
 .buttonaccess p {
-
-margin: 0px 0px;
+  margin: 0px 0px;
   color: var(--access-without-account);
 }
 
@@ -123,131 +122,108 @@ margin: 0px 0px;
 
 // gallery
 
-button{
+button {
   border: none;
   cursor: pointer;
   color: white;
   background: none;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .container_artgallery {
-width: 100%;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-/*background-color: white;*/
-background-color: transparent;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: white;*/
+  background-color: transparent;
 }
 
 .carousel-view {
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 
-transition: all 0.25s ease-in;
-
+  transition: all 0.25s ease-in;
 }
 
 .carousel-view .item-list {
-max-width: 950px;
-width: 450px;
+  max-width: 950px;
+  width: 450px;
 
-display: flex;
-gap: 48px;
-scroll-behavior: smooth;
-transition: all 0.25s ease-in;
--ms-overflow-style: none; /* IE and Edge */
-scrollbar-width: none; /* Firefox */
-overflow: auto;
-scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 48px;
+  scroll-behavior: smooth;
+  transition: all 0.25s ease-in;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow: auto;
+  scroll-snap-type: x mandatory;
 }
-
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .item-list::-webkit-scrollbar {
-display: none;
+  display: none;
 }
 
 .prev-btn {
-/*background = none;*/
-cursor: pointer;
+  /*background = none;*/
+  cursor: pointer;
 }
 
 .next-btn {
-cursor: pointer;
+  cursor: pointer;
 }
 
 .item {
-scroll-snap-align: center;
+  scroll-snap-align: center;
 
-height: 300px;
-background-color: deeppink;
-border-radius:8px;
+  height: 300px;
+  background-color: deeppink;
+  border-radius: 8px;
 }
 
 //
 
 @media (max-width: 980px) {
-
-.container_1 {
-
-
-  flex-direction: column;
-  align-items: center;
-
-}
-
-
+  .container_1 {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 //
 
 @media (max-width: 550px) {
+  .sub_container1_1 {
+    height: 200px;
+  }
 
-.sub_container1_1 {
-
-  height: 200px;
-}
-
-.sub_container1_2 {
-
- height: 300px;
-}
+  .sub_container1_2 {
+    height: 300px;
+  }
 
   .container_artgallery {
-
- display:none;
+    display: none;
   }
 
-
-.login {
-width: 70vw;
-
+  .login {
+    width: 70vw;
   }
-
-
 }
 
 //
 
-
-
 @media (max-width: 545px) {
-
-
   .login_inputs input {
-
     display: flex;
     flex-direction: column;
-    width:45vw;
-
+    width: 45vw;
   }
 
   .login_buttons {
-
     margin-left: 0px;
   }
 }
@@ -255,66 +231,46 @@ width: 70vw;
 //
 
 @media (max-width: 510px) {
-
   .login_inputs {
-
     margin-left: 12vw;
     display: flex;
     flex-direction: column;
-
-
   }
-
-
-
-
 }
 
 @media (max-width: 500px) {
-
   .login_buttons {
-
-margin-top: 50px;
-height: 100px;
-flex-direction: column;
-align-items: center;
-justify-content: space-around;
+    margin-top: 50px;
+    height: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
 
   .button1 {
     margin-right: 0px;
   }
 
-#logo {
+  #logo {
+    width: 60vw;
+    height: auto;
+  }
 
-  width:60vw;
-  height:auto;
+  br:nth-of-type(2) {
+    display: none;
+  }
 }
-
-
-    br:nth-of-type(2) {
-
-      display: none;
-    }
-
-}
-
 
 @media (max-width: 410px) {
-
   .login_inputs label {
-
-    font-size:18px;
+    font-size: 18px;
   }
 
   br:nth-of-type(1) {
-
     display: none;
   }
 
   .login {
-
     height: 370px;
   }
-
 }
