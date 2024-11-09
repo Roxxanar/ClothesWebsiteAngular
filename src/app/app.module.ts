@@ -23,6 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
+import { GraphQLModule } from './graphql.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,11 +45,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    GraphQLModule, // Apollo module to work with Apollo Client
+
   ],
-  providers: [ClothingService],
+  providers:
+  [ClothingService],
+
   bootstrap: [AppComponent]
 })
 
 
-export class AppModule { }
+export class AppModule {
+}

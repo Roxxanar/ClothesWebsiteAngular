@@ -7,6 +7,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogFormComponent } from '../dialog-form/dialog-form.component';
 import { DialogLoggedComponent } from '../dialog-logged/dialog-logged.component';
 
+import { Apollo } from 'apollo-angular';
+import { gql } from 'apollo-angular';
+
 @Component({
   selector: 'app-new-page',
   templateUrl: './new-page.component.html',
@@ -22,12 +25,16 @@ export class NewPageComponent implements OnInit {
 
   searchTerm: string = ''; // Holds the user's search input
 
-  constructor(private newService: NewService, public dialog: MatDialog) {
+
+
+  constructor(private newService: NewService, public dialog: MatDialog, private apollo: Apollo) {
     console.log('NewPageComponent initialized');
   }
 
   ngOnInit() {
     console.log('ngOnInit called');
+    this.fetchNewItems();
+
 
     this.updateItemsPerLoad();
 
@@ -39,6 +46,67 @@ export class NewPageComponent implements OnInit {
       this.loadMoreItems(); // Load the first batch initially
     });
   }
+
+  fetchNewItems() {
+    const GET_NEW_ITEMS_QUERY = gql`
+    query {
+      allClothesNew {
+        AllClothesID
+        IsNew
+        IsAtSale
+        Clothing {
+          ID
+          Name
+          Photo
+          Price
+          Color
+          Size
+        }
+        Shoes {
+          ID
+          Name
+          Photo
+          Price
+          Color
+          Size
+        }
+        Bags {
+          ID
+          Name
+          Photo
+          Price
+          Color
+          Size
+        }
+        Accessories {
+          ID
+          Name
+          Photo
+          Price
+          Color
+          Size
+        }
+      }
+    }
+
+
+    `;
+
+    this.apollo
+      .watchQuery({
+        query: GET_NEW_ITEMS_QUERY,
+      })
+      .valueChanges.subscribe((result: any) => {
+        console.log('key hey');
+        this.newItems = result.data.allClothesNew; // Corrected property name
+        console.log(this.newItems);  // You can inspect the data in the console
+      });
+
+
+
+  }
+
+
 
   @HostListener('window:resize', ['$event'])
   onResize() {
