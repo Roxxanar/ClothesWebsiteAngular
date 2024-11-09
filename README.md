@@ -1,3 +1,5 @@
+The backend code can be found on ClothesWebsiteNodeJsBackend Repository. Run 'npm run start' for the dev server and backend server.
+
 # FirstApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
