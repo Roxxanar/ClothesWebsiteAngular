@@ -21,6 +21,7 @@ import { DialogFormComponent } from './dialog-form/dialog-form.component';
 import { DialogLoggedComponent } from './dialog-logged/dialog-logged.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [ClothingService],
   bootstrap: [AppComponent]
