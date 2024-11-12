@@ -4,11 +4,11 @@
     <form id="form_new_page" [formGroup]="login">
       <div class="login_inputs">
         <label for="email"> Email address:</label>
-        <input required type="text" formControlName="email" name="email" ngModel />
+        <input required type="text" formControlName="email" [class.invalid-input]="isEmailInvalid"  name="email" ngModel />
 
         <br /><br /><br />
         <label for="password"> Password: </label>
-        <input required type="password" formControlName="password" name="password" ngModel/>
+        <input required type="password" formControlName="password" [class.invalid-input]="isPasswordInvalid"  name="password" ngModel/>
       </div>
 
       <div class="login_buttons">

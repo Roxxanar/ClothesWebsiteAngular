@@ -27,6 +27,17 @@ export class DialogFormComponent {
     this.dialogRef.close();
   }
 
+  // Getters for input validation
+  get isEmailInvalid(): boolean {
+    const email = this.login.get('email');
+    return email ? email.invalid && email.touched : false;
+  }
+
+  get isPasswordInvalid(): boolean {
+    const password = this.login.get('password');
+    return password ? password.invalid && password.touched : false;
+  }
+
 
 
 // Handle Sign Up submission

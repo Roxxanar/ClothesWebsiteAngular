@@ -22,6 +22,7 @@ import { DialogLoggedComponent } from './dialog-logged/dialog-logged.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DialogBagComponent } from './dialog-bag/dialog-bag.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClothingPageComponent,
     DialogFormComponent,
     DialogLoggedComponent,
+    DialogBagComponent,
   ],
   imports: [
     BrowserModule,

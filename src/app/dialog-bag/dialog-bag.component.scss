@@ -1,9 +1,9 @@
-#popUp {
+#popUp2 {
   position: fixed;
   top: 130px;
 
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 500px;
   background-color: white;
   border-style: solid;
   border-width: 2px;
@@ -11,7 +11,11 @@
   box-shadow: rgba(0, 0, 0, 0.04) 0px 10px 20px, rgba(0, 0, 0, 0.14) 0px 2px 6px,
     rgba(0, 0, 0, 0.04) 0px 0px 1px;
   border-radius: 10px;
-  z-index: 101;
+display: flex;
+flex-direction: column;
+
+align-items: center;
+  z-index: 99;
 }
 
 .welcome {
@@ -19,7 +23,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 160px;
+  height: 330px;
   margin-top: 30px;
   padding-right: 20px;
 }
@@ -29,20 +33,7 @@
   margin: 0 0;
 }
 
-.favorites {
-  margin-top: 50px;
-  font-size: 15px;
-  height: 40px;
-  width: 100px;
-  background-color: rgb(230, 31, 91);
-  color: white;
-  border-radius: 5px;
-  border: 5px solid rgb(230, 31, 91);
-}
 
-.favorites:hover {
-  transform: scale(1.03);
-}
 
 .login_inputs {
   margin-top: 45px;
@@ -52,13 +43,6 @@
 .login_inputs label {
   font-size: 20px;
 }
-
-.invalid-input {
-
-  border: 2px solid rgb(230, 31, 31) !important;
-
-}
-
 
 .login_inputs input {
   width: 250px;
@@ -103,8 +87,9 @@
 }
 
 #closeDialog {
-  margin-top: 50px;
-  margin-left: 150px;
+  margin-top: 40px;
+
+
   height: 30px;
   width: 80px;
   background-color: rgb(230, 31, 31);
@@ -112,6 +97,5 @@
   border-radius: 5px;
   border: 5px solid rgb(230, 31, 31);
 }
-
 
 

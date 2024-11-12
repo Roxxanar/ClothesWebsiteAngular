@@ -5,7 +5,7 @@ import { HostListener } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 import { DialogFormComponent } from '../dialog-form/dialog-form.component';
-import { DialogLoggedComponent } from '../dialog-logged/dialog-logged.component';
+import { DialogBagComponent } from '../dialog-bag/dialog-bag.component';
 
 @Component({
   selector: 'app-new-page',
@@ -121,8 +121,8 @@ console.log(this.filteredItems);
   }
 
   openBag(): void {
-    this.dialog.open(DialogLoggedComponent, {
-      width: '403.2px',
+    this.dialog.open(DialogBagComponent, {
+      width: '503.2px',
 
     });
   }
