@@ -1,6 +1,9 @@
 <div id="popUp2">
-  <div class="welcome"></div>
+  <div class="welcome">
+    <p> Welcome,</p>
+    <p id="username">{{ userName }}!</p>
+  </div>
   <button class="favorites">Favorites</button>
   <button (click)="closeDialogLogOut()" id="closeDialog">Close</button>
-  <button onclick="DialogLogOut()" id="logout">Log Out</button>
+  <button (click)="dialogLogOut()" id="logout">Log Out</button>
 </div>

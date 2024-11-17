@@ -6,6 +6,7 @@ import { HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogFormComponent } from '../dialog-form/dialog-form.component';
 import { DialogBagComponent } from '../dialog-bag/dialog-bag.component';
+import { DialogLoggedComponent } from '../dialog-logged/dialog-logged.component';
 
 @Component({
   selector: 'app-new-page',
@@ -114,17 +115,48 @@ console.log(this.filteredItems);
 
 
   openDialog(): void {
+
+    const token = localStorage.getItem('authToken');
+
+    if(token!=null) {
+
+      this.dialog.open(DialogLoggedComponent, {
+        width: '503.2px',
+
+      });
+    }
+    else {
+
     this.dialog.open(DialogFormComponent, {
-      width: '403.2px',
-
-    });
-  }
-
-  openBag(): void {
-    this.dialog.open(DialogBagComponent, {
       width: '503.2px',
 
     });
+
+  }
+  }
+
+  openBag(): void {
+
+    const token = localStorage.getItem('authToken');
+
+    if(token!=null) {
+
+      this.dialog.open(DialogBagComponent, {
+        width: '503.2px',
+
+      });
+    }
+    else {
+
+    this.dialog.open(DialogFormComponent, {
+      width: '503.2px',
+
+    });
+
+  }
+
+
+
   }
 
 

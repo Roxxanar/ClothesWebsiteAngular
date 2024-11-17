@@ -71,13 +71,33 @@ onLoginSubmit(): void {
     return;
   }
 
+
+  interface LoginResponse {
+    token: string;
+    message: string;
+    username: string;
+  }
+
+
   const { email, password } = this.login.value;
 
-  this.http.post('http://localhost:3000/login', { email, password })
+  this.http.post<LoginResponse>('http://localhost:3000/login', { email, password })
   .subscribe({
     next: (response) => {
       console.log('Login successful', response);
       // Handle redirection, token storage, etc.
+       // Safely access the token from the response
+       const token = response?.token;
+       const username = response?.username;
+
+       if (token) {
+         localStorage.setItem('authToken', token); // Store the token
+         localStorage.setItem('userName', username); // Store the token
+         window.location.reload(); // Reloads the current page
+         console.log('Token saved to localStorage');
+       } else {
+         console.error('Token not found in response');
+       }
     },
     error: (error) => {
       console.error('Login failed', error);
