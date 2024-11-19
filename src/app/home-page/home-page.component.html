@@ -1,8 +1,9 @@
 <!--<a routerLink="/">Home</a>-->
 
 <div class="access">
-  <button type="button" class="buttonaccess">
-    <a routerLink="/new-page"><p>Access without account</p></a>
+  <button type="button" class="buttonaccess" routerLink="/new-page">
+    <p *ngIf="!token">Access without account</p>  <!-- Display when token is null -->
+    <p *ngIf="token">Go to the shop</p>          <!-- Display when token is not null -->
   </button>
 </div>
 
@@ -39,29 +40,24 @@
         </button>
       </div>
     </div>
-    <script src="scriptartgallery.js"></script>
+
 
   </div>
-  <div class="sub_container1_2">
+  <div class="sub_container1_2" *ngIf="!token">
     <div class="login">
-    <form id="form_new_page" action="test.php" method="POST">
+      <form id="form_new_page" [formGroup]="login">
     <div class="login_inputs">
-          <label > Email address:</label>
-          <input required type="text" name="name" />
+      <label for="email"> Email address:</label>
+      <input required type="text" formControlName="email" [class.invalid-input]="isEmailInvalid"  name="email" ngModel />
 
-          <br /><br /><br />
-          <label > Password: </label>
-          <input required type="password" name="password" />
+      <br /><br /><br />
+      <label for="password"> Password: </label>
+      <input required type="password" formControlName="password" [class.invalid-input]="isPasswordInvalid"  name="password" ngModel/>
         </div>
 
         <div class="login_buttons">
-          <button type="submit" class="button1">
-            <a style="color: rgb(255, 255, 255)"
-              >Log in</a
-            >
-          </button>
-
-          <button type="submit" class="button2">Sign up</button>
+          <button type="submit" class="button1" (click)="onLoginSubmit()" [disabled]="login.invalid">Log in</button>
+          <button type="submit" class="button2" (click)="onSignupSubmit()" [disabled]="login.invalid">Sign up</button>
         </div>
       </form>
     </div>

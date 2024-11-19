@@ -23,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DialogBagComponent } from './dialog-bag/dialog-bag.component';
+import { DialogSubscribeComponent } from './dialog-subscribe/dialog-subscribe.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { DialogBagComponent } from './dialog-bag/dialog-bag.component';
     DialogFormComponent,
     DialogLoggedComponent,
     DialogBagComponent,
+    DialogSubscribeComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,23 +4,22 @@ import { NewPageComponent } from './new-page/new-page.component';
 import { FaqPageComponent } from './faq-page/faq-page.component';
 import { ClothingPageComponent } from './clothing-page/clothing-page.component';
 
-//import { AppComponent } from './app.component';
-import routeConfig from './routes';
+//import routeConfig from './routes';
 import { HomePageComponent } from './home-page/home-page.component';
 
 
 const routes: Routes = [
   { path: '', component: HomePageComponent }, // Default route
-  { path: 'homepage', component: HomePageComponent },
-  { path: 'newpage', component: NewPageComponent },
-  { path: 'faqpage', component: FaqPageComponent },
-  { path: 'clothingpage', component: ClothingPageComponent},
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: 'home-page', component: HomePageComponent },
+  { path: 'new-page', component: NewPageComponent },
+  { path: 'faq-page', component: FaqPageComponent },
+  { path: 'clothing-page', component: ClothingPageComponent},
+  { path: '**', redirectTo: 'home-page', pathMatch: 'full' } // Change with error component
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routeConfig)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 

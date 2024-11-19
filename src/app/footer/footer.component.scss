@@ -4,6 +4,8 @@
   transform: scale(1.04);
 }
 
+
+
 .container_2 {
   display: flex;
   align-items: center;
@@ -39,6 +41,15 @@ a:visited {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+}
+
+#form-subscribe {
+
+  height:90px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:flex-start;
 }
 
 .alert {
@@ -190,6 +201,11 @@ footer {
 
   .newsletter {
     width: 80vw;
+    align-items: center;
+  }
+
+  #form-subscribe {
+
     align-items: center;
   }
 }

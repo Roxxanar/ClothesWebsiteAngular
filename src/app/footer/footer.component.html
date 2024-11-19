@@ -1,14 +1,13 @@
-<dialog class="alert">
-  <p> Subscribed to our newsletter!</p>
-  <button id="dialog_button" onclick="closeAlertDialog()">OK</button>
-        </dialog>
+
 
     <div class="container_2">
       <div class="container2_1">
         <div class="newsletter">
           <p>SUBSCRIBE TO OUR NEWSLETTER</p>
+          <form id="form-subscribe">
           <input id="subscribe_input" type="text" placeholder="Email" />
-        <button onclick="openAlertDialog()" class="subscribe">Subscribe</button>
+        <button (click)="openSubscribeDialog()" class="subscribe">Subscribe</button>
+      </form>
         </div>
         <div class="others">
           <div class="others1">
@@ -60,4 +59,4 @@
       <p style="margin: 0 0">Copyright 2024 All Rights Reserved</p>
     </footer>
 
-    <script src="displayAlert.js"></script>
+
