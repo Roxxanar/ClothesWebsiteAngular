@@ -1,12 +1,11 @@
 <div class="container_1">
   <div class="sub_container1_1">
-    <a routerLink="/home-page">
-      <img
-        src="/assets/Mango_(retailer)-Logo.wine.svg"
-        id="logoimg"
-        alt="logoimg"
-      />
-    </a>
+    <img
+      routerLink="/home-page"
+      src="/assets/Mango_(retailer)-Logo.wine.svg"
+      id="logoimg"
+      alt="logoimg"
+    />
   </div>
   <div class="sub_container1_2">
     <img src="/assets/searchicon.svg" id="searchicon" alt="searchicon" />
@@ -21,14 +20,13 @@
       <img src="/assets/usericon.svg" id="usericon" alt="usericon" />
     </button>
 
-
-<button (click)="openBag()" id="openBag">
-    <img
-      src="/assets/shopping-bagicon.png"
-      id="shopping-bagicon"
-      alt="shopping-bagicon"
-    />
-  </button>
+    <button (click)="openBag()" id="openBag">
+      <img
+        src="/assets/shopping-bagicon.png"
+        id="shopping-bagicon"
+        alt="shopping-bagicon"
+      />
+    </button>
   </div>
 </div>
 
@@ -58,22 +56,30 @@
               [alt]="new.ClothingName"
               style="height: 300px"
             />
+            <div class="itemButtons">
+              <div id="price"><img src="assets/heart.png" alt="heart-icon" class="heart" /> </div>
 
-            <div id="price">
-              <p>Price ${{ new.ClothingPrice }}</p>
+              <div id="price">
+                <p>Price ${{ new.ClothingPrice }}</p>
+              </div>
+
+              <div id="price"><img src="assets/add-to-cart.png" alt="add-to-cart-icon" class="addtobag" /></div>
             </div>
           </div>
-
           <div *ngIf="new.ShoesID">
             <img
               [src]="'/assets/' + new.ShoesPhoto"
               [alt]="new.ShoesName"
               style="height: 300px"
             />
-
+            <div class="itemButtons">
+              <div id="price"><img src="assets/heart.png" alt="heart-icon" class="heart" /> </div>
             <div id="price">
               <p>Price ${{ new.ShoesPrice }}</p>
             </div>
+
+            <div id="price"><img src="assets/add-to-cart.png" alt="add-to-cart-icon" class="addtobag" /></div>
+          </div>
           </div>
 
           <div *ngIf="new.BagsID">
@@ -82,10 +88,13 @@
               [alt]="new.BagsName"
               style="height: 300px"
             />
-
+            <div class="itemButtons">
+              <div id="price"><img src="assets/heart.png" alt="heart-icon" class="heart" /> </div>
             <div id="price">
               <p>Price ${{ new.BagsPrice }}</p>
             </div>
+            <div id="price"><img src="assets/add-to-cart.png" alt="add-to-cart-icon" class="addtobag" /></div>
+          </div>
           </div>
 
           <div *ngIf="new.AccessoriesID">
@@ -94,10 +103,13 @@
               [alt]="new.AccessoriesName"
               style="height: 300px"
             />
-
+            <div class="itemButtons">
+              <div id="price"><img src="assets/heart.png" alt="heart-icon" class="heart" /> </div>
             <div id="price">
               <p>Price ${{ new.AccessoriesPrice }}</p>
             </div>
+            <div id="price"><img src="assets/add-to-cart.png" alt="add-to-cart-icon" class="addtobag" /></div>
+          </div>
           </div>
 
           <p></p>

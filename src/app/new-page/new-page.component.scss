@@ -90,6 +90,16 @@ input {
   width: 70vw;
 }
 
+.itemButtons {
+
+  position: absolute;
+  height: 50px;
+  width: 22.8vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .container_menu {
   width: 90px;
   height: 302.4px;
@@ -117,7 +127,7 @@ a:visited {
   justify-content: space-between;
 }
 
-.images:hover {
+.images div img:hover {
   transform: scale(1.03);
 }
 
@@ -137,17 +147,19 @@ a:visited {
   overflow: hidden;
 }
 
+
+
 .like {
-  height: 24px;
+  height: 22px;
 }
 
 .like2 {
-  height: 24px;
+  height: 22px;
 }
 
 .heart {
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   border-style: none;
   background-color: transparent;
   padding: 0px 0px;
@@ -165,7 +177,7 @@ a:visited {
 }
 
 .addtobag {
-  height: 27px;
+  height: 28px;
 }
 
 .price_row {
@@ -177,18 +189,19 @@ a:visited {
 }
 
 #price {
-  position: absolute;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  width: 400px;
+
 }
 
 #price p {
   padding: 5px 5px;
   border: 1.5px solid #000;
   border-radius: 9px;
+  font-size: 1rem;
 }
 
 .load-more-container {
