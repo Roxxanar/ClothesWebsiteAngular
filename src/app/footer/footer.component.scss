@@ -52,39 +52,13 @@ a:visited {
   align-items:flex-start;
 }
 
-.alert {
-  margin-left: 32vw;
+.invalid-input {
 
-  height: 150px;
-  width: 500px;
-  background-color: var(--alert-background);
-  border-radius: 10px;
+  border: 2px solid rgb(230, 31, 31) !important;
+
 }
 
-.alert p {
-  padding-left: 110px;
-  font-size: 23px;
-}
 
-.alert button {
-  margin-left: 185px;
-  margin-top: 20px;
-  height: 30px;
-  width: 100px;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border-radius: 5px;
-  border: 5px solid var(--primary-color);
-}
-
-.alert button:hover {
-  transform: scale(1.04);
-}
-
-::backdrop {
-  background-color: var(--backdrop-color);
-  opacity: 0.5;
-}
 
 .others {
   height: 300px;

@@ -1,7 +1,9 @@
 
 
-<div class="alert">
-  <p> Subscribed to our newsletter!</p>
+<div class="alert" *ngIf="subscriptionMessage">
+  <div class="submessage">
+  <p>{{ subscriptionMessage }}</p>
+</div>
   <button id="dialog_button" (click)="closeDialog()">OK</button>
 
 
