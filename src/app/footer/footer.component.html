@@ -4,14 +4,14 @@
       <div class="container2_1">
         <div class="newsletter">
           <p>SUBSCRIBE TO OUR NEWSLETTER</p>
-          <form id="form-subscribe" [formGroup]="subscribe" (submit)="checkSubscription(emailInput.value); $event.preventDefault()">
+          <form id="form-subscribe" [formGroup]="subscribe" (submit)="checkSubscription(); $event.preventDefault()">
           <input id="subscribe_input"
           #emailInput
           type="email"
           formControlName="email" [class.invalid-input]="isEmailInvalid"
           placeholder="Email"
           name="email"
-          required />
+          ngModel />
         <button type="submit" [disabled]="subscribe.invalid" class="subscribe">Subscribe</button>
       </form>
         </div>

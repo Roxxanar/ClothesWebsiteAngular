@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSubscribeComponent } from '../dialog-subscribe/dialog-subscribe.component';
 import { HttpClient } from '@angular/common/http';
-import { ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -12,9 +12,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class FooterComponent implements OnInit {
 
-  @ViewChild('emailInput') emailInput: ElementRef | undefined; // Reference to the email input field
+  //@ViewChild('emailInput') emailInput: ElementRef | undefined; // Reference to the email input field
+  emailInput: string = '';
+
   subscriptionMessage: string = '';
-  email: string = '';
   isSubscriptionChecked: boolean = false; // Flag to track if subscription check is complete
 
   subscribe = new FormGroup({
@@ -23,29 +24,36 @@ export class FooterComponent implements OnInit {
     });
 
 
-  constructor(private http: HttpClient, public dialog: MatDialog) {
+  constructor(private router: Router, private http: HttpClient, public dialog: MatDialog) {
 
   }
 
   ngOnInit(): void {
 
     localStorage.removeItem('subscriptionMessage');
+
+ // Listen to route changes
+ this.router.events.subscribe((event) => {
+  if (event instanceof NavigationEnd) {
+    this.subscribe.reset();// Reset the form on route change
+  }
+});
+
   }
 
 // Getter for input validation
 get isEmailInvalid(): boolean {
   const email = this.subscribe.get('email');
+
   return email ? email.invalid && email.touched : false;
 }
 
 
-  checkSubscription(email: string) {
-    // Trimitem cererea POST către backend pentru a verifica abonamentul
-    const subscriptionData = {
-      email: email,
-    };
+  checkSubscription() {
+    // Send POST request to backend for subscription check
+    const emailInput = this.subscribe.value;
 
-    this.http.post<any>('http://localhost:3000/usersubscribed', subscriptionData).subscribe({
+    this.http.post<any>('http://localhost:3000/usersubscribed', emailInput).subscribe({
       next: (response) => {
         // If the response contains a message, set it to subscriptionMessage
         if (response.message) {
@@ -70,9 +78,8 @@ get isEmailInvalid(): boolean {
 
   openSubscribeDialog(): void {
 
-    if (this.emailInput) {
-      this.emailInput.nativeElement.value = ''; // Clear the input field
-    }
+    this.subscribe.reset(); // Clear the form (and input)
+
     const token = localStorage.getItem('authToken');
 
     if (this.isSubscriptionChecked) { // Ensure dialog opens only after checking subscription
@@ -82,12 +89,14 @@ get isEmailInvalid(): boolean {
           width: '526.2px',
           height: '195px'
         });
+
       } else {
         this.dialog.open(DialogSubscribeComponent, {
           panelClass: 'custom-dialog',
           width: '526.2px',
           height: '195px'
         });
+
       }
     }
   }
