@@ -52,15 +52,15 @@
         <div *ngFor="let new of newItems" class="images">
           <div *ngIf="new.ClothingID">
             <img
-              [src]="'/assets/' + new.ClothingPhoto"
-              [alt]="new.ClothingName"
+              [src]="'/assets/' + new.ClothingID.Photo"
+              [alt]="new.ClothingID.Name"
               style="height: 300px"
             />
             <div class="itemButtons">
               <div id="price"><img src="assets/heart.png" alt="heart-icon" class="heart" /> </div>
 
               <div id="price">
-                <p>Price ${{ new.ClothingPrice }}</p>
+                <p>Price ${{ new.ClothingID.Price }}</p>
               </div>
 
               <div id="price"><img src="assets/add-to-cart.png" alt="add-to-cart-icon" class="addtobag" /></div>
@@ -68,14 +68,14 @@
           </div>
           <div *ngIf="new.ShoesID">
             <img
-              [src]="'/assets/' + new.ShoesPhoto"
-              [alt]="new.ShoesName"
+              [src]="'/assets/' + new.ShoesID.Photo"
+              [alt]="new.ShoesID.Name"
               style="height: 300px"
             />
             <div class="itemButtons">
               <div id="price"><img src="assets/heart.png" alt="heart-icon" class="heart" /> </div>
             <div id="price">
-              <p>Price ${{ new.ShoesPrice }}</p>
+              <p>Price ${{ new.ShoesID.Price }}</p>
             </div>
 
             <div id="price"><img src="assets/add-to-cart.png" alt="add-to-cart-icon" class="addtobag" /></div>
@@ -84,14 +84,14 @@
 
           <div *ngIf="new.BagsID">
             <img
-              [src]="'/assets/' + new.BagsPhoto"
-              [alt]="new.BagsName"
+              [src]="'/assets/' + new.BagsID.Photo"
+              [alt]="new.BagsID.Name"
               style="height: 300px"
             />
             <div class="itemButtons">
               <div id="price"><img src="assets/heart.png" alt="heart-icon" class="heart" /> </div>
             <div id="price">
-              <p>Price ${{ new.BagsPrice }}</p>
+              <p>Price ${{ new.BagsID.Price }}</p>
             </div>
             <div id="price"><img src="assets/add-to-cart.png" alt="add-to-cart-icon" class="addtobag" /></div>
           </div>
@@ -99,14 +99,14 @@
 
           <div *ngIf="new.AccessoriesID">
             <img
-              [src]="'/assets/' + new.AccessoriesPhoto"
-              [alt]="new.AccessoriesName"
+              [src]="'/assets/' + new.AccessoriesID.Photo"
+              [alt]="new.AccessoriesID.Name"
               style="height: 300px"
             />
             <div class="itemButtons">
               <div id="price"><img src="assets/heart.png" alt="heart-icon" class="heart" /> </div>
             <div id="price">
-              <p>Price ${{ new.AccessoriesPrice }}</p>
+              <p>Price ${{ new.AccessoriesID.Price }}</p>
             </div>
             <div id="price"><img src="assets/add-to-cart.png" alt="add-to-cart-icon" class="addtobag" /></div>
           </div>
