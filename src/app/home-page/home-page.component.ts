@@ -50,7 +50,7 @@ onSignupSubmit(): void {
 
   const { email, password } = this.login.value;
 
-  this.http.post('http://localhost:3000/signup', { email, password })
+  this.http.post('http://localhost:3200/signup', { email, password })
   .subscribe({
     next: (response) => {
       console.log('Signup successful', response);
@@ -82,7 +82,7 @@ onLoginSubmit(): void {
 
   const { email, password } = this.login.value;
 
-  this.http.post<LoginResponse>('http://localhost:3000/login', { email, password })
+  this.http.post<LoginResponse>('http://localhost:3200/login', { email, password })
   .subscribe({
     next: (response) => {
       console.log('Login successful', response);
