@@ -52,7 +52,7 @@
         <div *ngFor="let new of newItems" class="images">
           <div *ngIf="new.ClothingID">
             <img
-              [src]="'/assets/' + new.ClothingPhoto"
+              [src]="'/assets/' + new.ClothingID.Photo"
               [alt]="new.ClothingName"
               style="height: 300px"
             />
@@ -68,7 +68,7 @@
           </div>
           <div *ngIf="new.ShoesID">
             <img
-              [src]="'/assets/' + new.ShoesPhoto"
+              [src]="'/assets/' + new.ShoesID.Photo"
               [alt]="new.ShoesName"
               style="height: 300px"
             />
@@ -84,7 +84,7 @@
 
           <div *ngIf="new.BagsID">
             <img
-              [src]="'/assets/' + new.BagsPhoto"
+              [src]="'/assets/' + new.BagsID.Photo"
               [alt]="new.BagsName"
               style="height: 300px"
             />
@@ -99,7 +99,7 @@
 
           <div *ngIf="new.AccessoriesID">
             <img
-              [src]="'/assets/' + new.AccessoriesPhoto"
+              [src]="'/assets/' + new.AccessoriesID.Photo"
               [alt]="new.AccessoriesName"
               style="height: 300px"
             />
