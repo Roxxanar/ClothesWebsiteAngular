@@ -59,6 +59,9 @@
           <button type="submit" class="button1" (click)="onLoginSubmit()" [disabled]="login.invalid">Log in</button>
           <button type="submit" class="button2" (click)="onSignupSubmit()" [disabled]="login.invalid">Sign up</button>
         </div>
+        <div class="login_google">
+        <button class="button3" (click)="loginWithGoogle()">Log in with Google</button>
+</div>
       </form>
     </div>
   </div>

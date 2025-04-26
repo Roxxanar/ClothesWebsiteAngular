@@ -3,6 +3,8 @@ import { AfterViewInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-home-page',
@@ -22,12 +24,46 @@ export class HomePageComponent implements AfterViewInit, OnInit {
 token: string | null = null;
 
 
-constructor(private http: HttpClient, private router: Router) {}
+constructor(private http: HttpClient, private router: Router, private authService: AuthService) {}
 
 ngOnInit(): void {
+
+  /*if (localStorage.getItem('isAuthenticated') === 'true') {
+    localStorage.removeItem('isAuthenticated');
+    window.location.reload();
+  }*/
+
+
   // Check localStorage for the token when the component initializes
   this.token = localStorage.getItem('authToken');
+
+  if(this.token===null)
+  {
+
+  const tokenKey = Object.keys(localStorage).find(key => key.includes('-auth-token'));
+  // Dacă găsim cheia, luăm valoarea din localStorage
+  if (tokenKey) {
+    console.log('S-a gasit un token in localStorage.');
+    this.token = localStorage.getItem(tokenKey) || '';  // Folosim un string gol dacă valoarea este null
+
+  } else {
+    console.log('Nu s-a gasit un token in localStorage.');
+    this.token = '';  // Sau poți seta un fallback adecvat
+  }
+  }
+
 }
+
+
+
+loginWithGoogle() {
+  this.authService.signInWithGoogle().catch(err => {
+    console.error('Google sign-in error:', err);
+  });
+
+
+}
+
 
 // Getters for input validation
 get isEmailInvalid(): boolean {

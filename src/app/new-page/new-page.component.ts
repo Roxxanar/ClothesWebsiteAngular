@@ -20,6 +20,7 @@ export class NewPageComponent implements OnInit {
   displayedGroups: any[][] = []; // Contains groups of items, each group is an array of items
   itemsPerLoad = 9;
   currentIndex = 0;
+  token: string = '';
 
   searchTerm: string = ''; // Holds the user's search input
 
@@ -116,7 +117,11 @@ console.log(this.filteredItems);
 
   openDialog(): void {
 
-    const token = localStorage.getItem('authToken');
+    var token = localStorage.getItem('authToken');
+    if(token===null)
+      {
+      token = localStorage.getItem('sb-zyldhfgomockanyaptwi-auth-token');
+      }
 
     if(token!=null) {
 
@@ -137,7 +142,11 @@ console.log(this.filteredItems);
 
   openBag(): void {
 
-    const token = localStorage.getItem('authToken');
+    var token = localStorage.getItem('authToken');
+    if(token===null)
+      {
+      token = localStorage.getItem('sb-zyldhfgomockanyaptwi-auth-token');
+      }
 
     if(token!=null) {
 
