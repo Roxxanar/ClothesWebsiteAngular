@@ -28,10 +28,14 @@ constructor(private http: HttpClient, private router: Router, private authServic
 
 ngOnInit(): void {
 
-  /*if (localStorage.getItem('isAuthenticated') === 'true') {
-    localStorage.removeItem('isAuthenticated');
-    window.location.reload();
-  }*/
+  this.authService.getUser().then(user => {
+    if (user) {
+      console.log('User logat:', user.email);
+      this.router.navigate(['new-page']);
+    }
+  }).catch(error => {
+    console.error('Eroare la obținerea utilizatorului:', error);
+  });
 
 
   // Check localStorage for the token when the component initializes

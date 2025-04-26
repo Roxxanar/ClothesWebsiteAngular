@@ -119,13 +119,24 @@
 
   display: flex;
   justify-content: center;
+
   margin-top: 25px;
   margin-left: -15px;
 }
 
+.google {
+
+  width:17px;
+  margin-left: -5px;
+}
+
 .button3 {
+
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
   height: 30px;
-  width: 200px;
+  width: 190px;
   background-color: rgb(124, 91, 194);
   color: white;
   border-radius: 5px;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-dialog-logged',
@@ -9,13 +10,21 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class DialogLoggedComponent implements OnInit {
 
   userName: string | null = '';
+  userEmail: string | null = '';
 
-
-  constructor(private dialogRef: MatDialogRef<DialogLoggedComponent>) {}
+  constructor(private dialogRef: MatDialogRef<DialogLoggedComponent>, private authService: AuthService) {}
 
   ngOnInit(): void {
     // Retrieve the username from localStorage (or any other source)
     this.userName = localStorage.getItem('userName');
+
+
+    this.authService.getUser().then(user => {
+      if (user) {
+        this.userEmail = user.email || null;
+      }
+    });
+
   }
 
 

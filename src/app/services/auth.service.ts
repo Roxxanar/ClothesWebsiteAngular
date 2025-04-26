@@ -21,6 +21,7 @@ export class AuthService {
       provider: 'google',
       options: {
         redirectTo: 'http://localhost:4200/'
+
       }
     });
   }

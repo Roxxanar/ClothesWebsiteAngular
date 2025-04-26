@@ -1,7 +1,7 @@
 <div id="popUp2">
   <div class="welcome">
     <p> Welcome,</p>
-    <p id="username">{{ userName }}!</p>
+    <p id="username">{{ userName || userEmail }}!</p>
   </div>
   <button class="favorites">Favorites</button>
   <button (click)="closeDialogLogOut()" id="closeDialog">Close</button>
