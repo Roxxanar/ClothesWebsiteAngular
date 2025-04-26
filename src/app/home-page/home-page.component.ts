@@ -30,12 +30,25 @@ ngOnInit(): void {
 
   this.authService.getUser().then(user => {
     if (user) {
-      console.log('User logat:', user.email);
-      this.router.navigate(['new-page']);
+      const email = user.email;
+      if (email) {
+        console.log('User email from Supabase:', email);
+
+        this.router.navigate(['home-page']);
+
+        // Send email to backend
+        this.authService.sendGoogleUser(email);
+
+      } else {
+        console.error('Email not found in Supabase user object.');
+      }
     }
   }).catch(error => {
     console.error('Eroare la obținerea utilizatorului:', error);
   });
+
+
+
 
 
   // Check localStorage for the token when the component initializes

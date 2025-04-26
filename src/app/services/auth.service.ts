@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from 'src/app/environment';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { environment } from 'src/app/environment';
 export class AuthService {
   private supabase: SupabaseClient;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.supabase = createClient(
       environment.supabaseUrl,
       environment.supabaseKey
@@ -22,6 +23,18 @@ export class AuthService {
       options: {
         redirectTo: 'http://localhost:4200/'
 
+      }
+    });
+  }
+
+
+  sendGoogleUser(email: string) {
+    this.http.post('http://localhost:3200/auth/google', { email }).subscribe({
+      next: (response) => {
+        console.log('Backend response:', response);
+      },
+      error: (error) => {
+        console.error('Error sending user to backend:', error);
       }
     });
   }
