@@ -16,6 +16,9 @@
         <button type="submit" class="button2" (click)="onSignupSubmit()" [disabled]="login.invalid">Sign up</button>
 
       </div>
+      <div class="login_google">
+        <button class="button3" (click)="loginWithGoogle()"><img class="google" src="/assets/social.png" />Log in with Google</button>
+</div>
     </form>
   </div>
   <button (click)="closeDialog()" id="closeDialog">Close</button>

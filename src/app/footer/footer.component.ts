@@ -53,7 +53,7 @@ get isEmailInvalid(): boolean {
     // Send POST request to backend for subscription check
     const emailInput = this.subscribe.value;
 
-    this.http.post<any>('http://localhost:3200/usersubscribed', emailInput).subscribe({
+    this.http.post<any>('http://localhost:3200/subscription/usersubscribed', emailInput).subscribe({
       next: (response) => {
         // If the response contains a message, set it to subscriptionMessage
         if (response.message) {

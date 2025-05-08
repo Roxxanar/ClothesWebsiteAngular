@@ -7,6 +7,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogFormComponent } from '../dialog-form/dialog-form.component';
 import { DialogBagComponent } from '../dialog-bag/dialog-bag.component';
 import { DialogLoggedComponent } from '../dialog-logged/dialog-logged.component';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-new-page',
@@ -24,12 +26,36 @@ export class NewPageComponent implements OnInit {
 
   searchTerm: string = ''; // Holds the user's search input
 
-  constructor(private newService: NewService, public dialog: MatDialog) {
+  constructor(private newService: NewService, public dialog: MatDialog, private router: Router, private authService: AuthService) {
     console.log('NewPageComponent initialized');
   }
 
   ngOnInit() {
     console.log('ngOnInit called');
+
+
+    this.authService.getUser().then(user => {
+      if (user) {
+        const email = user.email;
+        if (email) {
+          console.log('User email from Supabase:', email);
+
+          //this.router.navigate(['new-page']);
+
+          // Send email to backend
+          this.authService.sendGoogleUser(email);
+
+        } else {
+          console.error('Email not found in Supabase user object.');
+        }
+      }
+    }).catch(error => {
+      console.error('Eroare la obținerea utilizatorului:', error);
+    });
+
+
+
+
 
     this.updateItemsPerLoad();
 

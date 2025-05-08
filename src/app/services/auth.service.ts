@@ -17,6 +17,12 @@ export class AuthService {
     );
   }
 
+  // Getter method for Supabase client
+  getSupabase() {
+    return this.supabase;
+  }
+
+
   signInWithGoogle() {
     return this.supabase.auth.signInWithOAuth({
       provider: 'google',

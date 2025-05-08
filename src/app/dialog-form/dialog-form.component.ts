@@ -3,6 +3,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +21,29 @@ export class DialogFormComponent {
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
 
-  constructor(private http: HttpClient, private dialogRef: MatDialogRef<DialogFormComponent>) {}
+  isLoading = false; // ⏳ true when loading, false when done
+
+
+  constructor(private http: HttpClient, private dialogRef: MatDialogRef<DialogFormComponent>, private authService: AuthService, private router: Router) {}
+
+
+
+
+  loginWithGoogle() {
+    this.isLoading = true;
+
+    this.authService.signInWithGoogle()
+      .then(() => {
+        // After successful sign-in, we don't navigate here.
+        // The NewPageComponent will listen for the auth change and navigate to new-page.
+        this.isLoading = false; // Stop the loading spinner
+      })
+      .catch(err => {
+        this.isLoading = false; // Stop the loading spinner on error
+        console.error('Google sign-in error:', err);
+      });
+  }
+
 
 
 
@@ -49,11 +73,11 @@ onSignupSubmit(): void {
 
   const { email, password } = this.login.value;
 
-  this.http.post('http://localhost:3200/signup', { email, password })
+  this.http.post('http://localhost:3200/auth/signup', { email, password })
   .subscribe({
     next: (response) => {
       console.log('Signup successful', response);
-      // Handle redirection or success message
+      window.location.reload();
     },
     error: (error) => {
       console.error('Signup failed', error);
@@ -81,7 +105,7 @@ onLoginSubmit(): void {
 
   const { email, password } = this.login.value;
 
-  this.http.post<LoginResponse>('http://localhost:3200/login', { email, password })
+  this.http.post<LoginResponse>('http://localhost:3200/auth/login', { email, password })
   .subscribe({
     next: (response) => {
       console.log('Login successful', response);
